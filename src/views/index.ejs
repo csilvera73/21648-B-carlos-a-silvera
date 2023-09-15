@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/notes/create">Crear Post</a>
+    <h1>Mis Publicaciones</h1>
+    <ul>
+        <% allNotes.forEach((note) => { %>
+            <%- include('nota', {nota}) %>
+            <li>
+                <p>
+                    <b><%= note.title %></b>
+                    <i><%= note.content %></i>
+                    <i><%= note.link %></i>
+                    <i><%= note.dcreate %></i>
+                    <button>Actualizar</button>
+                </p>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
